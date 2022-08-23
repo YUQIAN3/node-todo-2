@@ -9,12 +9,12 @@ describe('db', () => {
     })
     it('can read', async () => {
         const data = [{title: 'hi', done: true}]
-        fs.setReadFileMock("/Users/zhengtianyu/1", null, JSON.stringify(data))
+        fs.setReadFileMock('/Users/zhengtianyu/1', null, JSON.stringify(data))
 
-        const list = await db.read("/Users/zhengtianyu/1")
+        const list = await db.read('/Users/zhengtianyu/1')
         console.log(list);
         console.log(data);
-        expect(list).toStrictEqual([])
+        expect(list).toStrictEqual(data)
     })
     it('can write', async () => {
         let fakeFile
